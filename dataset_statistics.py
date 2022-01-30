@@ -1,5 +1,7 @@
 import sklearn
 import pandas as pd
+import seaborn as sns
+from seaborn import histplot
 import numpy as np
 
 
@@ -40,11 +42,30 @@ def calculate_dataset_statistics(dataset=None, class_id=None, x=None, y=None):
     
 
 def create_dataset_plots(dataset=None, class_id=None, x=None, y=None):
-    # create a plot for the class distribution
+    if isinstance(dataset, pd.DataFrame):
+        if class_id == None:
+            # assume that the last column is the class
+            class_id = dataset.columns[-1]
 
+    # check if x and y are passed
+    elif x is not None and y is not None:
+        print("Calculating dataset statistics from x and y")
+
+        # convert numpy array to pandas dataframe.
+        dataset = pd.DataFrame(x)
+        # add y to the dataframe
+        dataset["class"] = y
+        class_id = "class"
+    
+    # create a histogramm plot for the classes.
+    histplot(data=dataset, x="class", y="count")
+    
 
     # create plots for the different variables and their distributions
-
+    for col in dataset.columns:
+        if col != class_id:
+            sns.distplot(dataset[col])
+    
     # create a pdf containing the plots.
     
 
