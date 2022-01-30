@@ -1,9 +1,8 @@
-### Easily create a report for classification
-
+# Classification Report and Dataset Characteristics and Plots
 
 ## Installation
 Clone the github Repository.
 
 
-# Install Pip Environment
+### Install Pip Environment
 

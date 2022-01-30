@@ -37,12 +37,16 @@ def calculate_dataset_statistics(dataset=None, class_id=None, x=None, y=None):
         }
 
     return dataset_stats
+    
+
+def create_dataset_plots(dataset=None, class_id=None, x=None, y=None):
+    # create a plot for the class distribution
 
 
-def main():
+    # create plots for the different variables and their distributions
+
+    # create a pdf containing the plots.
+    
 
 
     pass
-
-if __name__ == "__main__":
-    main()
