@@ -11,9 +11,6 @@ def calculate_multiclass_classification_metrics(y_pred=None, y_test=None):
     # calculate metrics.
     acc = accuracy_score(y_true=y_test, y_pred=y_pred)
     bal_acc = balanced_accuracy_score(y_true=y_test, y_pred=y_pred)
-    # top_k_acc = top_k_accuracy_score(y_true=y_test, y_pred=y_pred, k=5)
-    # avg_prec = average_precision_score(y_true=y_test, y_score=y_pred)
-    # brier_score = brier_score_loss(y_true=y_test, y_prob=y_pred)
     
     f1_macro = f1_score(y_true=y_test, y_pred=y_pred, average='macro')
     f1_micro = f1_score(y_true=y_test, y_pred=y_pred, average='micro')
@@ -122,7 +119,7 @@ def binary_classification(y_pred=None, y_test=None):
     print(scores)
 
     # create confusion matrix.
-
+    
 
     # save into pdf.
 
